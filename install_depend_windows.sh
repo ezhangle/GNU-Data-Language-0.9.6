@@ -3,7 +3,7 @@ install() {
   . mingw-w64-$pkgname/PKGBUILD
   curl -O $source
   source_fn=`basename $source`
-  source_dn=`basename $source_fn tar.gz`
+  source_dn=`basename $source_fn .tar.gz`
   tar zxvf $source_fn
   cd $source_dn
   patch -p0 ../${source_dn}-mingw.patch
@@ -17,4 +17,4 @@ _toolchain=i586-mingw32msvc
 mkdir depend_windows && cd depend_windows
 
 pkgname=readline
-install()
+install
