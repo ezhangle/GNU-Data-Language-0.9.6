@@ -1,23 +1,25 @@
 install_pkg() {
-  echo "Downloading $pkgname..."
-  svn checkout https://github.com/Alexpux/MINGW-packages/trunk/mingw-w64-$pkgname
-  . mingw-w64-$pkgname/PKGBUILD
+  echo "Downloading $pkg_name..."
+  svn checkout https://github.com/Alexpux/MINGW-packages/trunk/mingw-w64-$pkg_name
+  . mingw-w64-$pkg_name/PKGBUILD
   curl -O $source
   source_fn=`basename $source`
   source_dn=`basename $source_fn .tar.gz`
-  echo "Decompressing $pkgname..."
+  echo "Decompressing $pkg_name..."
   tar zxf $source_fn
   cd $source_dn
+  echo "../${source_dn}-mingw.patch"
+  ls ../${source_dn}-mingw.patch
   if [[ -f ../${source_dn}-mingw.patch ]]; then
-    echo "Applying patch for $pkgname..."
-    patch -p0 ../${source_dn}-mingw.patch
+    echo "Applying patch for $pkg_name..."
+    patch -p0 < ../${source_dn}-mingw.patch
   fi
-  echo "Configuring $pkgname..."
+  echo "Configuring $pkg_name..."
   ./configure --prefix=/usr/${_toolchain}/ --host ${_toolchain}
-  echo "Building $pkgname..."
+  echo "Building $pkg_name..."
   make && make install
   cd ..
-  echo "Installed $pkgname."
+  echo "Installed $pkg_name."
 }
 
 _toolchain=i586-mingw32msvc
