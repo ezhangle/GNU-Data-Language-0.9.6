@@ -3,24 +3,18 @@ install_mingw_pkg() {
   svn checkout https://github.com/Alexpux/MINGW-packages/trunk/mingw-w64-$package
   
   cd mingw-w64-$package
-
   . PKGBUILD
-  msg=echo
 
-  mkdir src && srcdir=src
-  
-  cd src
+  srcdir="."
   for f in ${source[@]}; do
     if [[ $f == *":"* ]]; then
-      wget $f
+      curl -O $f
     fi
   done
   
   echo "Decompressing $package..."
   tar zxf `basename $source` # 1st file is to be decompressed
   
-  cd ..
-
   echo "Preparing for $package..."
   libdir=/usr/${MINGW_CHOST}/lib
   prepare
