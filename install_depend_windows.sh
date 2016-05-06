@@ -12,6 +12,8 @@ install_mingw_pkg() {
     fi
   done
   
+  ls -al
+  ls -al ..
   echo "Decompressing $package..."
   tar zxf `basename $source` # 1st file is to be decompressed
   
