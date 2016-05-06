@@ -1,4 +1,4 @@
-install() {
+install_pkg() {
   svn checkout https://github.com/Alexpux/MINGW-packages/trunk/mingw-w64-$pkgname
   . mingw-w64-$pkgname/PKGBUILD
   curl -O $source
@@ -17,4 +17,4 @@ _toolchain=i586-mingw32msvc
 mkdir depend_windows && cd depend_windows
 
 pkgname=readline
-install
+install_pkg
