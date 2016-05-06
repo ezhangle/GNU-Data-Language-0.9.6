@@ -14,5 +14,5 @@ before install:
 install:
   - mkdir "build_${TRAVIS_OS_NAME}"
   - cd "build_${TRAVIS_OS_NAME}"
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cmake -DCMAKE_INSTALL_PREFIX=/tmp/mingw32 .. ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cmake -DCMAKE_INSTALL_PREFIX=/tmp/linux .. ; fi
   - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then cmake -DCMAKE_TOOLCHAIN_FILE=mingw32.cmake -DCMAKE_INSTALL_PREFIX=/tmp/mingw32 .. ; fi
