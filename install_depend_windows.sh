@@ -7,7 +7,7 @@ install_pkg() {
   tar zxf $source_fn
   cd $source_dn
   patch -p0 ../${source_dn}-mingw.patch
-  ./configure --prefix=/usr/${_toolchain}/
+  ./configure --prefix=/usr/${_toolchain}/ --host ${_toolchain}
   make && make install
   cd ..
 }
