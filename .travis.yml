@@ -1,0 +1,5 @@
+language: cpp
+compiler:
+  - gcc
+install:
+  - cmake -DCMAKE_TOOLCHAIN_FILE=mingw32.cmake -DCMAKE_INSTALL_PREFIX=/tmp/mingw32 .
