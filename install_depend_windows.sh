@@ -26,5 +26,5 @@ _toolchain=i586-mingw32msvc
 
 mkdir depend_windows && cd depend_windows
 
-pkgname=readline
+pkg_name=readline
 install_pkg
