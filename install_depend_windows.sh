@@ -22,6 +22,8 @@ install_mingw_pkg() {
 
   echo "Preparing for $package..."
   libdir=/usr/${MINGW_CHOST}/lib
+  pwd
+  ls -al
   prepare
   
   echo "Building $package..."
