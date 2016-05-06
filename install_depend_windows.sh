@@ -5,15 +5,13 @@ install_mingw_pkg() {
   cd mingw-w64-$package
   . PKGBUILD
 
-  srcdir="."
+  srcdir=`pwd`
   for f in ${source[@]}; do
     if [[ $f == *":"* ]]; then
       curl -O $f
     fi
   done
   
-  ls -al
-  ls -al ..
   echo "Decompressing $package..."
   tar zxf `basename $source` # 1st file is to be decompressed
   
