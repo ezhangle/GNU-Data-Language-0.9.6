@@ -4,7 +4,7 @@ install_pkg() {
   curl -O $source
   source_fn=`basename $source`
   source_dn=`basename $source_fn .tar.gz`
-  tar zxvf $source_fn
+  tar zxf $source_fn
   cd $source_dn
   patch -p0 ../${source_dn}-mingw.patch
   ./configure --prefix=/usr/${_toolchain}/
