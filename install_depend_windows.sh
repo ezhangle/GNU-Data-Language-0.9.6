@@ -5,14 +5,14 @@ install_mingw_pkg() {
   cd mingw-w64-$package
 
   . PKGBUILD
+  msg=echo
 
   mkdir src && srcdir=src
   
   cd src
   for f in ${source[@]}; do
     if [[ $f == *":"* ]]; then
-      pwd
-      curl -O $f
+      wget $f
     fi
   done
   
