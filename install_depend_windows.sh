@@ -11,6 +11,7 @@ install_mingw_pkg() {
   cd src
   for f in ${source[@]}; do
     if [[ $f == *":"* ]]; then
+      pwd
       curl -O $f
     fi
   done
@@ -22,8 +23,6 @@ install_mingw_pkg() {
 
   echo "Preparing for $package..."
   libdir=/usr/${MINGW_CHOST}/lib
-  pwd
-  ls -al
   prepare
   
   echo "Building $package..."
