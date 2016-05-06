@@ -18,7 +18,7 @@ install_mingw_pkg() {
   echo "Preparing for $package..."
   libdir=/usr/${MINGW_CHOST}/lib
   if [[ $package == "readline" ]]; then # readline specific patch
-    sed -i 's|-Wl,--enable-auto-import||g' ${_realname}-${_basever}/support/shobj-conf
+    sed -i 's| -Wl,--enable-auto-import -Wl,--enable-auto-image-base||g' ${_realname}-${_basever}/support/shobj-conf
   fi
   prepare
   
