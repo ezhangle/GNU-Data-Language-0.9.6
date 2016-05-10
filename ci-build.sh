@@ -11,6 +11,7 @@ if test "$platform" = "bash"; then
     cmake ..
 elif test "$platform" = "mingw32"; then
     echo "Building on MinGW-w64 i686"
+    mv /usr/bin/sh.exe /usr/bin/sh-moved.exe
     pacman --sync --noconfirm --noprogressbar mingw-w64-i686-readline
     pacman --sync --noconfirm --noprogressbar mingw-w64-i686-cmake
     cmake -G "MinGW Makefiles" ..
