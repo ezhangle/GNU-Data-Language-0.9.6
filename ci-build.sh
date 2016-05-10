@@ -12,9 +12,9 @@ if test "$platform" = "bash"; then
 elif test "$platform" = "mingw32"; then
     echo "Building on MinGW-w64 i686"
     mv /usr/bin/sh.exe /usr/bin/sh-moved.exe
-    pacman --sync --noconfirm --noprogressbar mingw-w64-i686-readline
-    pacman --sync --noconfirm --noprogressbar mingw-w64-i686-libpng
-    pacman --sync --noconfirm --noprogressbar mingw-w64-i686-cmake
+    pacman --sync --noconfirm --noprogressbar mingw-w64-i686-readline mingw-w64-i686-libpng mingw-w64-i686-gsl mingw-w64-i686-cmake
+    pacman --sync --noconfirm --noprogressbar 
+    pacman --sync --noconfirm --noprogressbar 
     cmake -G "MinGW Makefiles" ..
 else
     echo "unknown environment!"
