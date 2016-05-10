@@ -8,6 +8,7 @@ cd build
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bsd-xdr/bsd-xdr-1.0.0.tar.gz
 tar zxvf bsd-xdr-1.0.0.tar.gz
 cd bsd-xdr-1.0.0
+sed -i 's/%hh/%/g' src/test/test_data.c
 make
 cd ..
 
