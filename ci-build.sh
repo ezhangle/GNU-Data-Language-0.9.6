@@ -12,3 +12,8 @@ else
     echo "unknown environment!"
     exit 1
 fi
+
+mkdir build
+cd build
+cmake ..
+make
