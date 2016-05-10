@@ -8,6 +8,7 @@ if test "$platform" = "bash"; then
 elif test "$platform" = "mingw32"; then
     echo "Building on MinGW-w64 i686"
     pacman --sync --noconfirm --noprogressbar mingw-w64-i686-readline
+    pacman --sync --noconfirm --noprogressbar mingw-w64-i686-cmake
 else
     echo "unknown environment!"
     exit 1
