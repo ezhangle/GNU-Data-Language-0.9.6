@@ -8,5 +8,4 @@ build:
 
 matrix:
   platform:
-    - bash
     - mingw32
