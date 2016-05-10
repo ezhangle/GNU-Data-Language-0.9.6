@@ -14,7 +14,8 @@ mv mingw/libxdr.dll.a /mingw32/lib/
 mv rpc /mingw32/include/
 cd ..
 
-pacman --sync --noconfirm --noprogressbar mingw-w64-i686-readline mingw-w64-i686-libpng mingw-w64-i686-gsl mingw-w64-i686-cmake
+pacman --sync --noconfirm --noprogressbar mingw-w64-i686-readline mingw-w64-i686-libpng mingw-w64-i686-gsl mingw-w64-i686-pcre
+pacman --sync --noconfirm --noprogressbar mingw-w64-i686-cmake
 
 mv /usr/bin/sh.exe /usr/bin/sh-moved.exe
 cmake -G "MinGW Makefiles" ..
